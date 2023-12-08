@@ -1,13 +1,3 @@
-body {
-    background-image: url("../img/bg-2.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    animation: fadeInAnimation ease .5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
 img {
     height: 40% !important;
     width: 40% !important;
@@ -17,13 +7,10 @@ input {
     font-family: 'Source Sans 3', sans-serif !important;
 }
 
-span {
-    color: #00CC99 !important;
-}
-
 span:hover {
     cursor: pointer;
 }
+
 
 .form-control:focus {
     background-color: #F4E9FD;
@@ -34,14 +21,4 @@ span:hover {
 
 .form-control::placeholder {
     color: #0C1525 !important;
-}
-
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }

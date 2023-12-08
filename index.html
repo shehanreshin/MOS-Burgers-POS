@@ -14,29 +14,36 @@
 <body class="d-flex justify-content-center align-items-center h-100">
     <main class="container">
         <div class="row d-flex justify-content-center align-items-center p-3">
-            <form class="col-lg-4 col-md-5 col-sm-12 bg-white p-5 rounded-4 m-5">
-                <div class="mb-3 text-center fw-bold h3">LOGIN</div>
+            <form class="col-lg-4 col-md-5 col-sm-12 bg-white p-5 rounded-4 m-5" onsubmit="return false;"
+                id="login-form">
+                <div class=" mb-3 text-center fw-bold h3">LOGIN
+                </div>
                 <div class="mb-4 d-flex justify-content-center align-items-center">
                     <img src="asset/img/logo.png" alt="logo">
                 </div>
                 <div class="mb-3">
-                    <label for="txt-email" class="form-label">Username</label>
-                    <input type="text" class="form-control" placeholder="Enter your username" id="txt-email">
+                    <label for="txt-username" class="form-label">Username</label>
+                    <input type="text" class="form-control" placeholder="Enter your username" id="txt-username">
                 </div>
                 <div class="mb-5">
                     <label for="txt-password" class="form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="Enter your username" id="txt-password">
+                    <input type="password" class="form-control" placeholder="Enter your password" id="txt-password">
                 </div>
                 <div class="d-flex justify-content-center mb-4">
-                    <button type="submit" class="btn p-2 w-75 color-bg-primary color-txt-white">LOGIN</button>
+                    <button class="btn p-2 w-75 color-bg-primary color-txt-white fw-semibold" id="btn-login"
+                        type="submit">LOGIN</button>
                 </div>
-                <div class="text-center">Contact <span>Support</span></div>
+                <div class=" text-center">Contact <span class="fw-semibold color-txt-primary">Support</span>
+                </div>
             </form>
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
+        integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="asset/js/app.js"></script>
 </body>
 

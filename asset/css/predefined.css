@@ -30,3 +30,23 @@
 .w-60 {
     width: 60%;
 }
+
+body {
+    background-image: url("../img/bg-9.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    animation: fadeInAnimation ease .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
