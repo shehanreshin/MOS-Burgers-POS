@@ -22,3 +22,7 @@ span:hover {
 .form-control::placeholder {
     color: #0C1525 !important;
 }
+
+a {
+    text-decoration: none;
+}
