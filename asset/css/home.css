@@ -1,5 +1,6 @@
 .active,
-.side-nav-item:hover {
+.side-nav-item:hover,
+.nav-item-type:hover {
     border-color: #9226ED;
 }
 
@@ -9,6 +10,11 @@
     border-radius: 12px;
 }
 
+.nav-item-type {
+    cursor: pointer;
+    border: 3px solid #FBFFFF;
+    border-radius: 12px;
+}
 
 main {
     display: flex;
@@ -19,4 +25,10 @@ main {
 .container-fluid {
     flex: 1;
     overflow-y: auto;
+}
+
+#card-area {
+    max-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }

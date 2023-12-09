@@ -19,6 +19,10 @@
     background-color: #FBFFFF !important;
 }
 
+.color-bg-light {
+    background-color: #F4E9FD !important;
+}
+
 .color-txt-white {
     color: #FBFFFF !important;
 }
@@ -29,6 +33,10 @@
 
 .color-txt-black {
     color: #0C1525 !important;
+}
+
+.color-text-danger {
+    color: #FB0B24 !important;
 }
 
 .w-60 {
