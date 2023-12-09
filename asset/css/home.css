@@ -32,3 +32,9 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
+#order-area {
+    max-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
