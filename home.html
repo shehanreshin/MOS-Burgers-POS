@@ -11,16 +11,45 @@
     <link rel="stylesheet" href="asset/css/predefined.css">
 </head>
 
-<body class="d-flex justify-content-center align-items-center h-100">
+<body>
     <main class="container">
-        <div class="row d-flex justify-content-center align-items-center p-3">
-            <div class="text-white display-1 text-center">Coming Soon</div>
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="asset/img/logo.png" alt="logo" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <form class="d-flex" role="search">
+                        <input class="form-control ms-4 me-2" type="search" placeholder="Search items..."
+                            aria-label="Search">
+                        <button class="btn color-bg-primary color-txt-white" type="submit">Search</button>
+                    </form>
+                    <div class="nav-item">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div><img class="me-lg-5 me-md-3" src="asset/img/home/reset.png" alt="reset"></div>
+                            <div><img class="me-lg-5 me-md-3" src="asset/img/home/clock.png" alt="clock"></div>
+                            <div><button class="btn color-bg-danger color-txt-white ps-5 pe-5 pt-2 pb-2">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-12">
+                <div class=""></div>
+            </div>
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-    <script src="asset/js/home  .js"></script>
+    <script src="asset/js/home.js"></script>
 </body>
 
 </html>
