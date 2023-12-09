@@ -1,8 +1,22 @@
-#navbar {
-    height: 100px;
+.active,
+.side-nav-item:hover {
+    border-color: #9226ED;
 }
 
-/* 
-div {
-    border: 1px solid red;
-} */
+.side-nav-item {
+    cursor: pointer;
+    border: 3px solid #FBFFFF;
+    border-radius: 12px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container-fluid {
+    flex: 1;
+    overflow-y: auto;
+}
