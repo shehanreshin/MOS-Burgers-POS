@@ -38,3 +38,17 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
+.accordion-button:not(.collapsed)::after {
+    order: -1;
+    margin-left: 0;
+    margin-right: 0.5em;
+    background-image: url("../img/home/expand-up.png");
+}
+
+.accordion-button.collapsed::after {
+    order: -1;
+    margin-left: 0;
+    margin-right: 0.5em;
+    background-image: url("../img/home/expand-b.png");
+}
