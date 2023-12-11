@@ -47,6 +47,10 @@
     width: 60%;
 }
 
+.h-60 {
+    height: 60%;
+}
+
 .form-control:focus {
     background-color: #F4E9FD;
     border-color: rgba(146, 38, 237, 0.8);

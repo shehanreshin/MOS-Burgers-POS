@@ -52,3 +52,7 @@ main {
     margin-right: 0.5em;
     background-image: url("../img/home/expand-b.png");
 }
+
+.accordion-body .form-control {
+    border: 2px solid #9226ED;
+}

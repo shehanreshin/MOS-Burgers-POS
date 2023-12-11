@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOS Burgers</title>
+    <link rel="icon" type="image" href="asset/img/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="asset/css/home.css">
@@ -298,181 +299,280 @@
                                     alt="add"></button>
                         </div>
                     </div>
-                    <div class="mt-3 mb-3 h-75 overflow-y-scroll">
+                    <div class="mt-3 mb-3 h-60 overflow-y-scroll">
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button fs-14" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <div>20</div>
-                                        <div>Cheese Burger (Regular)</div>
-                                        <div>Rs. 12000</div>
-                                        <button class="btn">
-                                            <img src="asset/img/home/cancel-b.png" alt="cancel">
-                                        </button>
+                                    <button class="accordion-button fs-14 color-bg-light" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                        aria-controls="collapseOne">
+                                        <div class="me-2">200</div>
+                                        <div class="d-flex justify-content-between w-100">
+                                            <div>
+                                                <div>Cheese Burger (Regular)</div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="fw-bold me-2">Rs. 120000</div>
+                                                <img src="asset/img/home/cancel-b.png" alt="cancel">
+                                            </div>
+                                        </div>
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                <div id="collapseOne" class="accordion-collapse collapse "
                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the first item's accordion body.</strong> It is shown by
-                                        default,
-                                        until the collapse plugin adds the appropriate classes that we use to style each
-                                        element. These classes control the overall appearance, as well as the showing
-                                        and
-                                        hiding via CSS transitions. You can modify any of this with custom CSS or
-                                        overriding
-                                        our default variables. It's also worth noting that just about any HTML can go
-                                        within
-                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <div class="accordion-body color-bg-light">
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex flex-column">
+                                                <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="200">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="0">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Accordion Item #2
+                                    <button class="accordion-button fs-14 color-bg-light" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
+                                        aria-controls="collapseTwo">
+                                        <div class="me-2">200</div>
+                                        <div class="d-flex justify-content-between w-100">
+                                            <div>
+                                                <div>Cheese Burger (Regular)</div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="fw-bold me-2">Rs. 120000</div>
+                                                <img src="asset/img/home/cancel-b.png" alt="cancel">
+                                            </div>
+                                        </div>
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                <div id="collapseTwo" class="accordion-collapse collapse "
                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by
-                                        default,
-                                        until the collapse plugin adds the appropriate classes that we use to style each
-                                        element. These classes control the overall appearance, as well as the showing
-                                        and
-                                        hiding via CSS transitions. You can modify any of this with custom CSS or
-                                        overriding
-                                        our default variables. It's also worth noting that just about any HTML can go
-                                        within
-                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <div class="accordion-body color-bg-light">
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex flex-column">
+                                                <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="200">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="0">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                    <button class="accordion-button fs-14 color-bg-light" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true"
                                         aria-controls="collapseThree">
-                                        Accordion Item #3
+                                        <div class="me-2">200</div>
+                                        <div class="d-flex justify-content-between w-100">
+                                            <div>
+                                                <div>Cheese Burger (Regular)</div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="fw-bold me-2">Rs. 120000</div>
+                                                <img src="asset/img/home/cancel-b.png" alt="cancel">
+                                            </div>
+                                        </div>
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
+                                <div id="collapseThree" class="accordion-collapse collapse "
                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by
-                                        default,
-                                        until the collapse plugin adds the appropriate classes that we use to style each
-                                        element. These classes control the overall appearance, as well as the showing
-                                        and
-                                        hiding via CSS transitions. You can modify any of this with custom CSS or
-                                        overriding
-                                        our default variables. It's also worth noting that just about any HTML can go
-                                        within
-                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <div class="accordion-body color-bg-light">
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex flex-column">
+                                                <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="200">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="0">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                    <button class="accordion-button fs-14 color-bg-light" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true"
                                         aria-controls="collapseFour">
-                                        Accordion Item #4
+                                        <div class="me-2">200</div>
+                                        <div class="d-flex justify-content-between w-100">
+                                            <div>
+                                                <div>Cheese Burger (Regular)</div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="fw-bold me-2">Rs. 120000</div>
+                                                <img src="asset/img/home/cancel-b.png" alt="cancel">
+                                            </div>
+                                        </div>
                                     </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
+                                <div id="collapseFour" class="accordion-collapse collapse "
                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by
-                                        default,
-                                        until the collapse plugin adds the appropriate classes that we use to style each
-                                        element. These classes control the overall appearance, as well as the showing
-                                        and
-                                        hiding via CSS transitions. You can modify any of this with custom CSS or
-                                        overriding
-                                        our default variables. It's also worth noting that just about any HTML can go
-                                        within
-                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <div class="accordion-body color-bg-light">
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex flex-column">
+                                                <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="200">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="0">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFive" aria-expanded="false"
+                                    <button class="accordion-button fs-14 color-bg-light" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true"
                                         aria-controls="collapseFive">
-                                        Accordion Item #5
+                                        <div class="me-2">200</div>
+                                        <div class="d-flex justify-content-between w-100">
+                                            <div>
+                                                <div>Cheese Burger (Regular)</div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="fw-bold me-2">Rs. 120000</div>
+                                                <img src="asset/img/home/cancel-b.png" alt="cancel">
+                                            </div>
+                                        </div>
                                     </button>
                                 </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse"
+                                <div id="collapseFive" class="accordion-collapse collapse "
                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by
-                                        default,
-                                        until the collapse plugin adds the appropriate classes that we use to style each
-                                        element. These classes control the overall appearance, as well as the showing
-                                        and
-                                        hiding via CSS transitions. You can modify any of this with custom CSS or
-                                        overriding
-                                        our default variables. It's also worth noting that just about any HTML can go
-                                        within
-                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <div class="accordion-body color-bg-light">
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex flex-column">
+                                                <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="200">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="0">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        Accordion Item #6
+                                    <button class="accordion-button fs-14 color-bg-light" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true"
+                                        aria-controls="collapseSix">
+                                        <div class="me-2">200</div>
+                                        <div class="d-flex justify-content-between w-100">
+                                            <div>
+                                                <div>Cheese Burger (Regular)</div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="fw-bold me-2">Rs. 120000</div>
+                                                <img src="asset/img/home/cancel-b.png" alt="cancel">
+                                            </div>
+                                        </div>
                                     </button>
                                 </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse"
+                                <div id="collapseSix" class="accordion-collapse collapse "
                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by
-                                        default,
-                                        until the collapse plugin adds the appropriate classes that we use to style each
-                                        element. These classes control the overall appearance, as well as the showing
-                                        and
-                                        hiding via CSS transitions. You can modify any of this with custom CSS or
-                                        overriding
-                                        our default variables. It's also worth noting that just about any HTML can go
-                                        within
-                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <div class="accordion-body color-bg-light">
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex flex-column">
+                                                <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="200">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="0">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSeven" aria-expanded="false"
+                                    <button class="accordion-button fs-14 color-bg-light" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true"
                                         aria-controls="collapseSeven">
-                                        Accordion Item #7
+                                        <div class="me-2">200</div>
+                                        <div class="d-flex justify-content-between w-100">
+                                            <div>
+                                                <div>Cheese Burger (Regular)</div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="fw-bold me-2">Rs. 120000</div>
+                                                <img src="asset/img/home/cancel-b.png" alt="cancel">
+                                            </div>
+                                        </div>
                                     </button>
                                 </h2>
-                                <div id="collapseSeven" class="accordion-collapse collapse"
+                                <div id="collapseSeven" class="accordion-collapse collapse "
                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the third item's accordion body.</strong> It is hidden by
-                                        default,
-                                        until the collapse plugin adds the appropriate classes that we use to style each
-                                        element. These classes control the overall appearance, as well as the showing
-                                        and
-                                        hiding via CSS transitions. You can modify any of this with custom CSS or
-                                        overriding
-                                        our default variables. It's also worth noting that just about any HTML can go
-                                        within
-                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <div class="accordion-body color-bg-light">
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex flex-column">
+                                                <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="200">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
+                                                <input class="form-control w-75 color-txt-black" type="number"
+                                                    id="txt-quantity-1" value="0">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <div class="d-flex justify-content-between color-bg-light">
+                        <div class="m-2">Add</div>
+                        <div class="d-flex">
+                            <div class="color-txt-primary mt-2 mb-2 me-3 ms-3">Discount</div>
+                            <div class="color-txt-primary mt-2 mb-2 me-3 ms-3">Note</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="d-flex justify-content-between fs-14">
+                            <div>Subtotal</div>
+                            <div>Rs. 33900</div>
+                        </div>
+                        <div class="d-flex justify-content-between fs-14">
+                            <div>Discount</div>
+                            <div>Rs. 1680</div>
+                        </div>
+                        <div class="d-flex justify-content-between pt-2 pb-2 fw-bold fs-5">
+                            <div>Payable Amount</div>
+                            <div>Rs. 32220</div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between pt-2">
+                        <button class="btn color-bg-danger color-txt-white w-50 me-3 p-2">Cancel</button>
+                        <button class="btn color-bg-primary color-txt-white w-50 p-2">Proceed</button>
+                    </div>
                 </div>
             </div>
         </div>
