@@ -62,3 +62,39 @@ main {
 #icon-clock {
     cursor: pointer;
 }
+
+@media (min-width:992px) and (max-width:1199px) {
+    #item-types {
+        font-size: 13px !important;
+    }
+}
+
+@media (min-width:576px) and (max-width:767px) {
+    #item-types {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width:576px) {
+    #item-types {
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width:484px) {
+    #item-types {
+        font-size: 8px !important;
+    }
+
+    #item-types div {
+        margin-left: .5rem !important;
+        margin-right: .5rem !important;
+    }
+}
+
+@media (max-width:576px) {
+    #item-types div {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
