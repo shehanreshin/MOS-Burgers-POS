@@ -12,16 +12,7 @@ span:hover {
 }
 
 
-.form-control:focus {
-    background-color: #F4E9FD;
-    border-color: rgba(146, 38, 237, 0.8);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(146, 38, 237, 0.6);
-    outline: 0 none;
-}
 
-.form-control::placeholder {
-    color: #0C1525 !important;
-}
 
 a {
     text-decoration: none;
