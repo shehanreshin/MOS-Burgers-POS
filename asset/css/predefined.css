@@ -7,6 +7,10 @@
     color: #0C1525 !important;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 .color-bg-primary {
     background-color: #9226ED !important;
 }
