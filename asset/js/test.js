@@ -1,10 +1,8 @@
-fetch(new Request("./asset/data/user_credentials.json"))
+fetch(new Request("./asset/data/items.json"))
     .then(response => {
         return response.json();
     })
     .then(json => {
-        var users = json.users;
-        users.forEach(user => {
-            console.log(user.username)
-        });
+        var items = json.items;
+        console.log(items.burgers);
     });

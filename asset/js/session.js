@@ -15,3 +15,4 @@ fetch(new Request("./asset/data/user_credentials.json"))
         }
     });
 
+/* add localstorage clear on browser window closing logic here */

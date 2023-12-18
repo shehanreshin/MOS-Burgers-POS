@@ -1,0 +1,30 @@
+{
+    "items": {
+        "burgers": [
+            {
+                "code": "B1001",
+                "name": "Classic Burger (Large)",
+                "price": "750.00",
+                "discount": "",
+                "image": "asset\\img\\items\\burgers\\burger-1.png"
+            },
+            {
+                "code": "B1002",
+                "name": "Classic Burger (Regular)",
+                "price": "1500.00",
+                "discount": "15",
+                "image": "asset\\img\\items\\burgers\\burger-2.png"
+            }
+        ],
+        "beverages": [
+            {
+                "code": "B1044",
+                "name": "Pepsi (330ml)",
+                "price": "990.00",
+                "discount": "5",
+                "image": "",
+                "expiry_date": "22.12.2023"
+            }
+        ]
+    }
+}
