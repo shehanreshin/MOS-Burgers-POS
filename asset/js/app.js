@@ -15,6 +15,6 @@ document.getElementById("login-form").addEventListener("submit", (event) => {
         msgInvalidCredentials.style.removeProperty('display');
         return;
     }
-    localStorage.setItem('loggedIn', true);
+    localStorage.setItem('loggedIn', txtPassword.value);
     window.location.replace("home.html")
 });
