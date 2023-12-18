@@ -100,6 +100,71 @@
                 "image": "asset\\img\\items\\burgers\\burger-10.png"
             }
         ],
+        "submarines": [
+            {
+                "code": "B1016",
+                "name": "Crispy Chicken Submarine (Large)",
+                "price": "2000.00",
+                "discount": "",
+                "image": "asset\\img\\items\\submarines\\submarine-1.jpg"
+            },
+            {
+                "code": "B1017",
+                "name": "Crispy Chicken Submarine (Regular)",
+                "price": "1500.00",
+                "discount": "",
+                "image": "asset\\img\\items\\submarines\\submarine-1.jpg"
+            },
+            {
+                "code": "B1018",
+                "name": "Chicken Submarine (Large)",
+                "price": "1800.00",
+                "discount": "3",
+                "image": "asset\\img\\items\\submarines\\submarine-2.jpg"
+            },
+            {
+                "code": "B1019",
+                "name": "Chicken Submarine (Regular)",
+                "price": "1400.00",
+                "discount": "",
+                "image": "asset\\img\\items\\submarines\\submarine-2.jpg"
+            },
+            {
+                "code": "B1020",
+                "name": "Grinder Submarine",
+                "price": "2300.00",
+                "discount": "",
+                "image": "asset\\img\\items\\submarines\\submarine-3.jpg"
+            },
+            {
+                "code": "B1021",
+                "name": "Cheese Submarine",
+                "price": "2200.00",
+                "discount": "",
+                "image": "asset\\img\\items\\submarines\\submarine-4.jpg"
+            },
+            {
+                "code": "B1022",
+                "name": "Double Cheese n Chicken Submarine",
+                "price": "1900.00",
+                "discount": "16",
+                "image": "asset\\img\\items\\submarines\\submarine-5.jpg"
+            },
+            {
+                "code": "B1023",
+                "name": "Special Horgie Submarine",
+                "price": "2800.00",
+                "discount": "",
+                "image": "asset\\img\\items\\submarines\\submarine-6.jpg"
+            },
+            {
+                "code": "B1024",
+                "name": "MOS Special Submarine",
+                "price": "3000.00",
+                "discount": "",
+                "image": "asset\\img\\items\\submarines\\submarine-7.jpg"
+            }
+        ],
         "beverages": [
             {
                 "code": "B1044",
