@@ -209,6 +209,57 @@
                 "image": "asset\\img\\items\\fries\\fries-3.jpg"
             }
         ],
+        "pasta": [
+            {
+                "code": "B1031",
+                "name": "Chicken n Cheese Pasta",
+                "price": 1600.00,
+                "discount": "15",
+                "image": "asset\\img\\items\\pasta\\pasta-1.jpg"
+            },
+            {
+                "code": "B1032",
+                "name": "Chicken Penne Pasta",
+                "price": 1700.00,
+                "discount": "",
+                "image": "asset\\img\\items\\pasta\\pasta-2.jpg"
+            },
+            {
+                "code": "B1033",
+                "name": "Ground Turkey Pasta Bake",
+                "price": 2900.00,
+                "discount": "10",
+                "image": "asset\\img\\items\\pasta\\pasta-3.jpg"
+            },
+            {
+                "code": "B1034",
+                "name": "Creamy Shrimp Pasta",
+                "price": 2000.00,
+                "discount": "",
+                "image": "asset\\img\\items\\pasta\\pasta-4.jpg"
+            },
+            {
+                "code": "B1035",
+                "name": "Lemon Butter Pasta",
+                "price": 1950.00,
+                "discount": "",
+                "image": "asset\\img\\items\\pasta\\pasta-5.jpg"
+            },
+            {
+                "code": "B1036",
+                "name": "Tagliatelle Pasta",
+                "price": 2400.00,
+                "discount": "1",
+                "image": "asset\\img\\items\\pasta\\pasta-6.jpg"
+            },
+            {
+                "code": "B1037",
+                "name": "Baked Ravioli",
+                "price": 2000.00,
+                "discount": "1",
+                "image": "asset\\img\\items\\pasta\\pasta-7.jpg"
+            }
+        ],
         "beverages": [
             {
                 "code": "B1044",
