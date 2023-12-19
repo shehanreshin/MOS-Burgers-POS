@@ -1,19 +1,19 @@
 let itemsSection = document.getElementById('items-section');
 let items;
+let burgers;
+let submarines;
 
 function generateBurgers() {
-    var burgers = items.burgers;
     var burgerCardsHTML = "";
-
     burgers.forEach(burger => {
         burgerCardsHTML += `<div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="card w-100 h-100" id="`+ burger.code + `">
+            <div class="card w-100 h-100" id="${burger.code}">
                 <img src="`+ burger.image + `" class="card-img-top w-100 h-50 object-fit-cover"
                     alt="burger">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
-                        <h6 class="card-title mb-2">`+ burger.name + `</h6>
-                        <h6 class="fw-bolder">`+ burger.price + `</h6>
+                        <h6 class="card-title mb-2">${burger.name}</h6>
+                        <h6 class="fw-bolder">Rs. ${(burger.price).toFixed(2)}</h6>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -32,18 +32,17 @@ function generateBurgers() {
 }
 
 function generateSubmarines() {
-    var submarines = items.submarines;
     var submarineCardsHTML = "";
 
     submarines.forEach(submarine => {
         submarineCardsHTML += `<div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="card w-100 h-100" id="`+ submarine.code + `">
-                <img src="`+ submarine.image + `" class="card-img-top w-100 h-50 object-fit-cover"
+            <div class="card w-100 h-100" id="${submarine.code}">
+                <img src="${submarine.image}" class="card-img-top w-100 h-50 object-fit-cover"
                     alt="burger">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
-                        <h6 class="card-title mb-2">`+ submarine.name + `</h6>
-                        <h6 class="fw-bolder">`+ submarine.price + `</h6>
+                        <h6 class="card-title mb-2">${submarine.name}</h6>
+                        <h6 class="fw-bolder">Rs. ${(submarine.price).toFixed(2)}</h6>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -67,8 +66,13 @@ fetch(new Request("./asset/data/items.json"))
     })
     .then(json => {
         items = json.items;
+        burgers = items.burgers;
+        submarines = items.submarines;
         generateBurgers();
     });
 
 document.getElementById('nav-burgers').addEventListener('click', () => generateBurgers());
-document.getElementById('nav-submarines').addEventListener('click', () => generateSubmarines());
+document.getElementById('nav-submarines').addEventListener('click', () => {
+    document.getElementById('nav-submarines').style;
+    generateSubmarines();
+});
