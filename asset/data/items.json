@@ -165,6 +165,50 @@
                 "image": "asset\\img\\items\\submarines\\submarine-7.jpg"
             }
         ],
+        "fries": [
+            {
+                "code": "B1025",
+                "name": "Steak Fries (Large)",
+                "price": 1200.00,
+                "discount": "",
+                "image": "asset\\img\\items\\fries\\fries-1.jpg"
+            },
+            {
+                "code": "B1026",
+                "name": "Steak Fries (Medium)",
+                "price": 600.00,
+                "discount": "",
+                "image": "asset\\img\\items\\fries\\fries-1.jpg"
+            },
+            {
+                "code": "B1027",
+                "name": "French Fries (Large)",
+                "price": 800.00,
+                "discount": "",
+                "image": "asset\\img\\items\\fries\\fries-2.jpg"
+            },
+            {
+                "code": "B1028",
+                "name": "French Fries (Medium)",
+                "price": 650.00,
+                "discount": "",
+                "image": "asset\\img\\items\\fries\\fries-2.jpg"
+            },
+            {
+                "code": "B1029",
+                "name": "French Fries (Small)",
+                "price": 450.00,
+                "discount": "",
+                "image": "asset\\img\\items\\fries\\fries-2.jpg"
+            },
+            {
+                "code": "B1030",
+                "name": "Sweet Potato Fries (Large)",
+                "price": 600.00,
+                "discount": "",
+                "image": "asset\\img\\items\\fries\\fries-3.jpg"
+            }
+        ],
         "beverages": [
             {
                 "code": "B1044",
