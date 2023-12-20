@@ -1,9 +1,11 @@
 let itemsSection = document.getElementById('items-section');
-let items, burgers, submarines, fries, pasta, beverages;
+let items, burgers, submarines, fries, pasta, chicken, beverages;
 let navBurgers = document.getElementById('nav-burgers'),
     navSubmarines = document.getElementById('nav-submarines'),
     navFries = document.getElementById('nav-fries'),
-    navPasta = document.getElementById('nav-pasta');
+    navPasta = document.getElementById('nav-pasta'),
+    navChicken = document.getElementById('nav-chicken'),
+    navBeverages = document.getElementById('nav-beverages');
 
 
 function generateBurgers() {
@@ -40,7 +42,7 @@ function generateSubmarines() {
         submarineCardsHTML += `<div class="col-lg-4 col-md-6 col-sm-6">
             <div class="card w-100 h-100" id="${submarine.code}">
                 <img src="${submarine.image}" class="card-img-top w-100 h-50 object-fit-cover"
-                    alt="burger">
+                    alt="submarine">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
                         <h6 class="card-title mb-2">${submarine.name}</h6>
@@ -68,7 +70,7 @@ function generateFries() {
         friesCardsHTML += `<div class="col-lg-4 col-md-6 col-sm-6">
             <div class="card w-100 h-100" id="${friedItem.code}">
                 <img src="${friedItem.image}" class="card-img-top w-100 h-50 object-fit-cover"
-                    alt="burger">
+                    alt="fries">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
                         <h6 class="card-title mb-2">${friedItem.name}</h6>
@@ -96,7 +98,7 @@ function generatePasta() {
         pastaCardsHTML += `<div class="col-lg-4 col-md-6 col-sm-6">
             <div class="card w-100 h-100" id="${pastaItem.code}">
                 <img src="${pastaItem.image}" class="card-img-top w-100 h-50 object-fit-cover"
-                    alt="burger">
+                    alt="pasta">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
                         <h6 class="card-title mb-2">${pastaItem.name}</h6>
@@ -118,11 +120,40 @@ function generatePasta() {
     itemsSection.innerHTML = pastaCardsHTML;
 }
 
+function generateChicken() {
+    var chickenCardsHTML = "";
+    chicken.forEach(chickenItem => {
+        chickenCardsHTML += `<div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card w-100 h-100" id="${chickenItem.code}">
+                <img src="${chickenItem.image}" class="card-img-top w-100 h-50 object-fit-cover"
+                    alt="chicken">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h6 class="card-title mb-2">${chickenItem.name}</h6>
+                        <h6 class="fw-bolder">Rs. ${(chickenItem.price).toFixed(2)}</h6>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="expiry-status color-text-danger">
+                            
+                        </div>
+                        <div><button
+                                class="btn color-bg-primary color-txt-white pe-4 ps-4">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    });
+    itemsSection.innerHTML = chickenCardsHTML;
+}
+
 function intializeItemArrays(items) {
     burgers = items.burgers;
     submarines = items.submarines;
     fries = items.fries;
     pasta = items.pasta;
+    chicken = items.chicken;
 }
 
 fetch(new Request("./asset/data/items.json"))
@@ -140,6 +171,7 @@ function resetActiveNavSelection() {
     navSubmarines.classList.remove('color-txt-primary');
     navFries.classList.remove('color-txt-primary');
     navPasta.classList.remove('color-txt-primary');
+    navChicken.classList.remove('color-txt-primary');
 }
 
 navBurgers.addEventListener('click', () => {
@@ -164,4 +196,10 @@ navPasta.addEventListener('click', () => {
     resetActiveNavSelection();
     navPasta.classList.add('color-txt-primary');
     generatePasta();
+});
+
+navChicken.addEventListener('click', () => {
+    resetActiveNavSelection();
+    navChicken.classList.add('color-txt-primary');
+    generateChicken();
 });

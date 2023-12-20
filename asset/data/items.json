@@ -260,6 +260,50 @@
                 "image": "asset\\img\\items\\pasta\\pasta-7.jpg"
             }
         ],
+        "chicken": [
+            {
+                "code": "B1038",
+                "name": "Fried Chicken (Small)",
+                "price": 1200.00,
+                "discount": "",
+                "image": "asset\\img\\items\\chicken\\chicken-1.jpg"
+            },
+            {
+                "code": "B1039",
+                "name": "Fried Chicken (Regular)",
+                "price": 2300.00,
+                "discount": "10",
+                "image": "asset\\img\\items\\chicken\\chicken-1.jpg"
+            },
+            {
+                "code": "B1040",
+                "name": "Fried Chicken (Large)",
+                "price": 3100.00,
+                "discount": "5",
+                "image": "asset\\img\\items\\chicken\\chicken-1.jpg"
+            },
+            {
+                "code": "B1041",
+                "name": "Hot Wings (Large)",
+                "price": 2400.00,
+                "discount": "",
+                "image": "asset\\img\\items\\chicken\\chicken-2.jpg"
+            },
+            {
+                "code": "B1042",
+                "name": "Devilled Chicken (Large)",
+                "price": 900.00,
+                "discount": "",
+                "image": "asset\\img\\items\\chicken\\chicken-3.jpg"
+            },
+            {
+                "code": "B1043",
+                "name": "BBQ Chicken (Regular)",
+                "price": 2100.00,
+                "discount": "",
+                "image": "asset\\img\\items\\chicken\\chicken-4.jpg"
+            }
+        ],
         "beverages": [
             {
                 "code": "B1044",
