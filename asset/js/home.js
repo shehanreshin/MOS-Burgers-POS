@@ -384,6 +384,17 @@ navBeverages.addEventListener('click', () => {
     generateBeverages();
 });
 
+document.getElementById('btn-logout').addEventListener('click', () => {
+    localStorage.clear();
+    window.location.replace("../../index.html");
+});
+
+document.getElementById('btn-cancel').addEventListener('click', () => {
+    selectedItems = [];
+    updateSelectedItemsDisplay();
+    updateBill();
+});
+
 function attachCancelButtonListeners() {
     document.querySelectorAll('.cancel-selected-item').forEach((cancelButton) => {
         cancelButton.addEventListener('click', (event) => {
