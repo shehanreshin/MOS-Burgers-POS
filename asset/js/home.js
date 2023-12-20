@@ -1,5 +1,5 @@
 let itemsSection = document.getElementById('items-section'),
-    ordersSection = document.getElementById('accordionExample');
+    orderSection = document.getElementById('accordionExample');
 let items, burgers = [], submarines = [], fries = [], pasta = [], chicken = [], beverages = [];
 let navBurgers = document.getElementById('nav-burgers'),
     navSubmarines = document.getElementById('nav-submarines'),
@@ -7,8 +7,14 @@ let navBurgers = document.getElementById('nav-burgers'),
     navPasta = document.getElementById('nav-pasta'),
     navChicken = document.getElementById('nav-chicken'),
     navBeverages = document.getElementById('nav-beverages');
-let currentOrders = [];
+let orders = [], selectedItems = [];
 
+function generateOrderId() {
+    if (currentOrders.length == 0) {
+        return (1).toFixed(9);
+    }
+    return (currentOrders[currentOrders.length - 1] + 1).toFixed(9);
+}
 
 function generateBurgers() {
     var burgerCardsHTML = "";
@@ -28,7 +34,7 @@ function generateBurgers() {
 
                         </div>
                         <div><button
-                                class="btn color-bg-primary color-txt-white pe-4 ps-4" onclick="addItemToOrder(${burger.code});">Add</button>
+                                class="btn color-bg-primary color-txt-white pe-4 ps-4" onclick="addItemToOrder('${burger.code}')">Add</button>
                         </div>
                     </div>
                 </div>
@@ -38,52 +44,79 @@ function generateBurgers() {
     itemsSection.innerHTML = burgerCardsHTML;
 }
 
-function addItemToOrder(itemCode) {
-    let item = getItem(itemCode);
-    ordersSection.innerHTML +=
-        `<div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button fs-14 color-bg-light" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
-                    aria-controls="collapseTwo">
-                    <div class="me-2">200</div>
-                    <div class="d-flex justify-content-between w-100">
-                        <div>
-                            <div>${item.name}</div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="fw-bold me-2">${item.price}</div>
-                            <div><img src="asset/img/home/cancel-b.png" alt="cancel"></div>
-                        </div>
+function addItemToOrder(code) {
+    var item = getItem(code);
+    var itemDTO = {
+        code: item.code,
+        name: item.name,
+        qty: 1,
+        unitPrice: item.price,
+        discount: item.discount,
+        get totalPrice() {
+            return this.unitPrice * this.qty;
+        }
+    }
+    for (var selectedItem of selectedItems) {
+        if (selectedItem.code == code) {
+            selectedItem.qty += 1;
+            updateSelectedItemsDisplay();
+            return;
+        }
+    }
+    selectedItems.push(itemDTO);
+    updateSelectedItemsDisplay();
+}
+
+function updateSelectedItemsDisplay() {
+    orderSection.innerHTML = "";
+    var collapseCounter = 0;
+    for (var selectedItem of selectedItems) {
+        orderSection.innerHTML +=
+            `<div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button fs-14 color-bg-light" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse${collapseCounter}" aria-expanded="true"
+                aria-controls="collapse${collapseCounter}">
+                <div class="me-2">${selectedItem.qty}</div>
+                <div class="d-flex justify-content-between w-100">
+                    <div>
+                        <div>${selectedItem.name}</div>
                     </div>
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse "
-                data-bs-parent="#accordionExample">
-                <div class="accordion-body color-bg-light">
                     <div class="d-flex align-items-center">
-                        <div class="d-flex flex-column">
-                            <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
-                            <input class="form-control w-75 color-txt-black" type="number"
-                                id="txt-quantity-1" value="200">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                            <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
-                            <input class="form-control w-75 color-txt-black" type="number"
-                                id="txt-quantity-1" value="0">
-                        </div>
+                        <div class="fw-bold me-2">Rs. ${selectedItem.totalPrice.toFixed(2)}</div>
+                        <div><img src="asset/img/home/cancel-b.png" alt="cancel"></div>
+                    </div>
+                </div>
+            </button>
+        </h2>
+        <div id="collapse${collapseCounter}" class="accordion-collapse collapse "
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body color-bg-light">
+                <div class="d-flex align-items-center">
+                    <div class="d-flex flex-column">
+                        <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
+                        <input class="form-control w-75 color-txt-black" type="number"
+                            id="txt-quantity-1" value="${selectedItem.qty}">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
+                        <input class="form-control w-75 color-txt-black" type="number"
+                            id="txt-quantity-1" value="0">
                     </div>
                 </div>
             </div>
-        </div>`;
+        </div>
+    </div>`;
+        collapseCounter++;
+    }
 }
 
-function getItem(itemCode) {
-    items.forEach(item => {
-        if (item.code === itemCode) {
+function getItem(code) {
+    for (var item of items) {
+        if (item.code == code) {
             return item;
         }
-    });
+    }
 }
 
 function generateSubmarines() {
