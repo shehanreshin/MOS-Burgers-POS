@@ -1,7 +1,7 @@
 let itemsSection = document.getElementById('items-section'),
     orderSection = document.getElementById('accordionExample');
 let items, burgers = [], submarines = [], fries = [], pasta = [], chicken = [], beverages = [];
-let navBurgers = document.getElementById('nav-burgers'),
+const navBurgers = document.getElementById('nav-burgers'),
     navSubmarines = document.getElementById('nav-submarines'),
     navFries = document.getElementById('nav-fries'),
     navPasta = document.getElementById('nav-pasta'),
@@ -86,7 +86,7 @@ function updateSelectedItemsDisplay() {
                     </div>
                     <div class="d-flex align-items-center">
                         <div class="fw-bold me-2">Rs. ${selectedItem.totalPrice.toFixed(2)}</div>
-                        <div><img src="asset/img/home/cancel-b.png" alt="cancel"></div>
+                        <div class="cancel-selected-item"><img src="asset/img/home/cancel-b.png" alt="cancel"></div>
                     </div>
                 </div>
             </button>
@@ -111,6 +111,7 @@ function updateSelectedItemsDisplay() {
     </div>`;
         collapseCounter++;
     }
+    attachCancelButtonListeners();
 }
 
 function getItem(code) {
@@ -341,3 +342,15 @@ navBeverages.addEventListener('click', () => {
     navBeverages.classList.add('color-txt-primary');
     generateBeverages();
 });
+
+function attachCancelButtonListeners() {
+    document.querySelectorAll('.cancel-selected-item').forEach((cancelButton) => {
+        cancelButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            var accordionItem = cancelButton.closest('.accordion-item');
+            var index = Array.from(accordionItem.parentElement.children).indexOf(accordionItem);
+            selectedItems.splice(index, 1);
+            updateSelectedItemsDisplay();
+        });
+    });
+}
