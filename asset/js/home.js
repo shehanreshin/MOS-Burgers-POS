@@ -1,12 +1,18 @@
 let itemsSection = document.getElementById('items-section'),
     orderSection = document.getElementById('accordionExample');
 let items, burgers = [], submarines = [], fries = [], pasta = [], chicken = [], beverages = [];
+
 const navBurgers = document.getElementById('nav-burgers'),
     navSubmarines = document.getElementById('nav-submarines'),
     navFries = document.getElementById('nav-fries'),
     navPasta = document.getElementById('nav-pasta'),
     navChicken = document.getElementById('nav-chicken'),
     navBeverages = document.getElementById('nav-beverages');
+
+const subtotalSelector = document.getElementById('subtotal'),
+    totalDiscountSelector = document.getElementById('total-discount'),
+    payableAmountSelector = document.getElementById('payable-amount');
+
 let orders = [], selectedItems = [];
 
 function generateOrderId() {
@@ -14,6 +20,17 @@ function generateOrderId() {
         return (1).toFixed(9);
     }
     return (currentOrders[currentOrders.length - 1] + 1).toFixed(9);
+}
+
+function updateBill() {
+    var subtotal = 0, totalDiscount = 0;
+    selectedItems.forEach(selectedItem => {
+        subtotal += selectedItem.totalPrice;
+        totalDiscount = subtotal * (selectedItem.discount == "" ? 0 : selectedItem.discount / 100);
+    });
+    subtotalSelector.innerHTML = `Rs. ${subtotal.toFixed(2)}`;
+    totalDiscountSelector.innerHTML = `Rs. ${totalDiscount.toFixed(2)}`;
+    payableAmountSelector.innerHTML = `Rs. ${(subtotal - totalDiscount).toFixed(2)}`;
 }
 
 function generateBurgers() {
@@ -51,7 +68,8 @@ function addItemToOrder(code) {
         name: item.name,
         qty: 1,
         unitPrice: item.price,
-        discount: item.discount,
+        maxDiscount: item.maxDiscount,
+        discount: 0,
         get totalPrice() {
             return this.unitPrice * this.qty;
         }
@@ -60,26 +78,28 @@ function addItemToOrder(code) {
         if (selectedItem.code == code) {
             selectedItem.qty += 1;
             updateSelectedItemsDisplay();
+            updateBill();
             return;
         }
     }
     selectedItems.push(itemDTO);
     updateSelectedItemsDisplay();
+    updateBill();
 }
 
 function updateSelectedItemsDisplay() {
     orderSection.innerHTML = "";
     var collapseCounter = 0;
     for (var selectedItem of selectedItems) {
-        let placeHolder = selectedItem.discount != "" ? "placeholder = 'Max: " +
-            selectedItem.discount + "%'" : "";
+        let placeHolder = selectedItem.maxDiscount != "" ? "placeholder = 'Max: " +
+            selectedItem.maxDiscount + "%'" : "";
         orderSection.innerHTML +=
             `<div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button fs-14 color-bg-light" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapse${collapseCounter}" aria-expanded="true"
                 aria-controls="collapse${collapseCounter}">
-                <div class="me-2">${selectedItem.qty}</div>
+                <div class="me-2" id="quantity-header-${collapseCounter}">${selectedItem.qty}</div>
                 <div class="d-flex justify-content-between w-100">
                     <div>
                         <div>${selectedItem.name}</div>
@@ -96,20 +116,31 @@ function updateSelectedItemsDisplay() {
             <div class="accordion-body color-bg-light">
                 <div class="d-flex align-items-center">
                     <div class="d-flex flex-column">
-                        <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
-                        <input class="form-control w-75 color-txt-black" type="number"
-                            id="txt-quantity-1" value="${selectedItem.qty}">
+                        <label class="color-txt-black" for="txt-quantity">Quantity</label>
+                        <input class="txt-quantity form-control w-75 color-txt-black" type="number"
+                            id="txt-quantity-${collapseCounter}" value="${selectedItem.qty}">
                     </div>
                     <div class="d-flex flex-column justify-content-center">
-                        <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
-                        <input class="form-control w-75 color-txt-black" type="number"
-                            id="txt-quantity-1" ${placeHolder} ${selectedItem.discount == "" ? "value = '0'" : ""}  ${selectedItem.discount == "" ? "readonly" : ""}>
+                        <label class="color-txt-black" for="txt-discount">Discount(%)</label>
+                        <input class="txt-discount form-control w-75 color-txt-black" type="number"
+                             ${placeHolder} ${selectedItem.maxDiscount == "" ? "value = '0'" : ""}  ${selectedItem.maxDiscount == "" ? "readonly" : ""}>
                     </div>
                 </div>
             </div>
         </div>
     </div>`;
         collapseCounter++;
+    }
+    for (var i = 0; i < collapseCounter; i++) {
+        var quantitySelector = document.getElementById(`txt-quantity-${i}`);
+        var quantityHeaderSelector = document.getElementById(`quantity-header-${i}`);
+        quantitySelector.addEventListener('input', event => {
+            var newQuantity = parseInt(event.target.value, 10);
+            selectedItem.qty = newQuantity;
+            quantitySelector.value = selectedItem.qty;
+            quantityHeaderSelector.innerHTML = selectedItem.qty;
+            updateBill();
+        });
     }
     attachCancelButtonListeners();
 }
