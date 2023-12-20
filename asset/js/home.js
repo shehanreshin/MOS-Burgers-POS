@@ -148,12 +148,42 @@ function generateChicken() {
     itemsSection.innerHTML = chickenCardsHTML;
 }
 
+function generateBeverages() {
+    var beverageCardsHTML = "";
+    beverages.forEach(beverage => {
+        var isExpired = new Date() >= new Date(beverage.expiry_date);
+        beverageCardsHTML += `<div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card w-100 h-100" id="${beverage.code}">
+                <img src="${beverage.image}" class="card-img-top w-100 h-50 object-fit-cover"
+                    alt="beverage">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h6 class="card-title mb-2">${beverage.name}</h6>
+                        <h6 class="fw-bolder">Rs. ${(beverage.price).toFixed(2)}</h6>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="expiry-status color-text-danger">
+                            ${isExpired ? "Expired" : ""}
+                        </div>
+                        <div><button
+                                class="btn ${isExpired ? "color-bg-danger" : "color-bg-primary"} color-txt-white pe-4 ps-4">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    });
+    itemsSection.innerHTML = beverageCardsHTML;
+}
+
 function intializeItemArrays(items) {
     burgers = items.burgers;
     submarines = items.submarines;
     fries = items.fries;
     pasta = items.pasta;
     chicken = items.chicken;
+    beverages = items.beverages;
 }
 
 fetch(new Request("./asset/data/items.json"))
@@ -172,6 +202,7 @@ function resetActiveNavSelection() {
     navFries.classList.remove('color-txt-primary');
     navPasta.classList.remove('color-txt-primary');
     navChicken.classList.remove('color-txt-primary');
+    navBeverages.classList.remove('color-txt-primary');
 }
 
 navBurgers.addEventListener('click', () => {
@@ -202,4 +233,10 @@ navChicken.addEventListener('click', () => {
     resetActiveNavSelection();
     navChicken.classList.add('color-txt-primary');
     generateChicken();
+});
+
+navBeverages.addEventListener('click', () => {
+    resetActiveNavSelection();
+    navBeverages.classList.add('color-txt-primary');
+    generateBeverages();
 });

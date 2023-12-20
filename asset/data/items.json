@@ -310,8 +310,32 @@
                 "name": "Pepsi (330ml)",
                 "price": 990.00,
                 "discount": "5",
-                "image": "",
-                "expiry_date": "22.12.2023"
+                "image": "asset\\img\\items\\beverages\\beverage-1.jpg",
+                "expiry_date": "2023-12-22"
+            },
+            {
+                "code": "B1045",
+                "name": "Coca-Cola (330ml)",
+                "price": 1230.00,
+                "discount": "",
+                "image": "asset\\img\\items\\beverages\\beverage-2.jpg",
+                "expiry_date": "2023-12-20"
+            },
+            {
+                "code": "B1046",
+                "name": "Sprite (330ml)",
+                "price": 1500.00,
+                "discount": "3",
+                "image": "asset\\img\\items\\beverages\\beverage-3.jpg",
+                "expiry_date": "2023-12-19"
+            },
+            {
+                "code": "B1047",
+                "name": "Mirinda (330ml)",
+                "price": 850.00,
+                "discount": "7",
+                "image": "asset\\img\\items\\beverages\\beverage-4.jpg",
+                "expiry_date": "2023-12-28"
             }
         ]
     }
