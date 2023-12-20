@@ -381,6 +381,7 @@ function attachCancelButtonListeners() {
             var accordionItem = cancelButton.closest('.accordion-item');
             var index = Array.from(accordionItem.parentElement.children).indexOf(accordionItem);
             selectedItems.splice(index, 1);
+            updateBill();
             updateSelectedItemsDisplay();
         });
     });
