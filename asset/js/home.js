@@ -69,6 +69,7 @@ function addItemToOrder(code) {
         qty: 1,
         unitPrice: item.price,
         maxDiscount: item.maxDiscount,
+        expiry_date: item.expiry_date,
         discount: 0,
         get totalPrice() {
             return this.unitPrice * this.qty;
@@ -91,21 +92,27 @@ function updateSelectedItemsDisplay() {
     orderSection.innerHTML = "";
     var collapseCounter = 0;
     for (var selectedItem of selectedItems) {
-        let placeHolder = selectedItem.maxDiscount != "" ? "placeholder = 'Max: " +
+        var placeHolder = selectedItem.maxDiscount != "" ? "placeholder = 'Max: " +
             selectedItem.maxDiscount + "%'" : "";
+        var isExpired = selectedItem.expiry_date != undefined && new Date() >= new Date(selectedItem.expiry_date);
+        console.log(isExpired);
+        console.log(selectedItem.expiry_date);
+        console.log(new Date() >= new Date(selectedItem.expiry_date));
+        var accordionColorBody = isExpired ? 'color-bg-danger' : 'color-bg-light';
+        var accordionColorText = isExpired ? 'color-txt-white' : 'color-txt-dark';
         orderSection.innerHTML +=
             `<div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button fs-14 color-bg-light" type="button"
+            <button class="accordion-button fs-14 ${accordionColorBody}" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapse${collapseCounter}" aria-expanded="true"
                 aria-controls="collapse${collapseCounter}">
-                <div class="me-2" id="quantity-header-${collapseCounter}">${selectedItem.qty}</div>
+                <div class="me-2  ${accordionColorText}" id="quantity-header-${collapseCounter}">${selectedItem.qty}</div>
                 <div class="d-flex justify-content-between w-100">
                     <div>
-                        <div>${selectedItem.name}</div>
+                        <div class="${accordionColorText}">${selectedItem.name}</div>
                     </div>
                     <div class="d-flex align-items-center">
-                        <div class="fw-bold me-2" id="total-price-${collapseCounter}">Rs. ${selectedItem.totalPrice.toFixed(2)}</div>
+                        <div class="fw-bold me-2 ${accordionColorText}" id="total-price-${collapseCounter}">Rs. ${selectedItem.totalPrice.toFixed(2)}</div>
                         <div class="cancel-selected-item"><img src="asset/img/home/cancel-b.png" alt="cancel"></div>
                     </div>
                 </div>
