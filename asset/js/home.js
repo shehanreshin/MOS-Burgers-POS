@@ -1,11 +1,13 @@
-let itemsSection = document.getElementById('items-section');
-let items, burgers, submarines, fries, pasta, chicken, beverages;
+let itemsSection = document.getElementById('items-section'),
+    ordersSection = document.getElementById('accordionExample');
+let items, burgers = [], submarines = [], fries = [], pasta = [], chicken = [], beverages = [];
 let navBurgers = document.getElementById('nav-burgers'),
     navSubmarines = document.getElementById('nav-submarines'),
     navFries = document.getElementById('nav-fries'),
     navPasta = document.getElementById('nav-pasta'),
     navChicken = document.getElementById('nav-chicken'),
     navBeverages = document.getElementById('nav-beverages');
+let currentOrders = [];
 
 
 function generateBurgers() {
@@ -26,7 +28,7 @@ function generateBurgers() {
 
                         </div>
                         <div><button
-                                class="btn color-bg-primary color-txt-white pe-4 ps-4">Add</button>
+                                class="btn color-bg-primary color-txt-white pe-4 ps-4" onclick="addItemToOrder(${burger.code});">Add</button>
                         </div>
                     </div>
                 </div>
@@ -34,6 +36,54 @@ function generateBurgers() {
         </div>`
     });
     itemsSection.innerHTML = burgerCardsHTML;
+}
+
+function addItemToOrder(itemCode) {
+    let item = getItem(itemCode);
+    ordersSection.innerHTML +=
+        `<div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button fs-14 color-bg-light" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
+                    aria-controls="collapseTwo">
+                    <div class="me-2">200</div>
+                    <div class="d-flex justify-content-between w-100">
+                        <div>
+                            <div>${item.name}</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="fw-bold me-2">${item.price}</div>
+                            <div><img src="asset/img/home/cancel-b.png" alt="cancel"></div>
+                        </div>
+                    </div>
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse "
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body color-bg-light">
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex flex-column">
+                            <label class="color-txt-black" for="txt-quantity-1">Quantity</label>
+                            <input class="form-control w-75 color-txt-black" type="number"
+                                id="txt-quantity-1" value="200">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                            <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
+                            <input class="form-control w-75 color-txt-black" type="number"
+                                id="txt-quantity-1" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+}
+
+function getItem(itemCode) {
+    items.forEach(item => {
+        if (item.code === itemCode) {
+            return item;
+        }
+    });
 }
 
 function generateSubmarines() {
@@ -178,12 +228,28 @@ function generateBeverages() {
 }
 
 function intializeItemArrays(items) {
-    burgers = items.burgers;
-    submarines = items.submarines;
-    fries = items.fries;
-    pasta = items.pasta;
-    chicken = items.chicken;
-    beverages = items.beverages;
+    items.forEach(item => {
+        switch (item.type) {
+            case "burgers":
+                burgers.push(item);
+                break;
+            case "submarines":
+                submarines.push(item);
+                break;
+            case "fries":
+                fries.push(item);
+                break;
+            case "pasta":
+                pasta.push(item);
+                break;
+            case "chicken":
+                chicken.push(item);
+                break;
+            case "beverages":
+                beverages.push(item);
+                break;
+        }
+    });
 }
 
 fetch(new Request("./asset/data/items.json"))
