@@ -71,6 +71,8 @@ function updateSelectedItemsDisplay() {
     orderSection.innerHTML = "";
     var collapseCounter = 0;
     for (var selectedItem of selectedItems) {
+        let placeHolder = selectedItem.discount != "" ? "placeholder = 'Max: " +
+            selectedItem.discount + "%'" : "";
         orderSection.innerHTML +=
             `<div class="accordion-item">
         <h2 class="accordion-header">
@@ -101,7 +103,7 @@ function updateSelectedItemsDisplay() {
                     <div class="d-flex flex-column justify-content-center">
                         <label class="color-txt-black" for="txt-quantity-1">Discount(%)</label>
                         <input class="form-control w-75 color-txt-black" type="number"
-                            id="txt-quantity-1" value="0">
+                            id="txt-quantity-1" ${placeHolder} ${selectedItem.discount == "" ? "value = '0'" : ""}  ${selectedItem.discount == "" ? "readonly" : ""}>
                     </div>
                 </div>
             </div>
@@ -137,7 +139,7 @@ function generateSubmarines() {
                             
                         </div>
                         <div><button
-                                class="btn color-bg-primary color-txt-white pe-4 ps-4">Add</button>
+                                class="btn color-bg-primary color-txt-white pe-4 ps-4" onclick="addItemToOrder('${submarine.code}')">Add</button>
                         </div>
                     </div>
                 </div>
@@ -165,7 +167,7 @@ function generateFries() {
                             
                         </div>
                         <div><button
-                                class="btn color-bg-primary color-txt-white pe-4 ps-4">Add</button>
+                                class="btn color-bg-primary color-txt-white pe-4 ps-4" onclick="addItemToOrder('${friedItem.code}')">Add</button>
                         </div>
                     </div>
                 </div>
@@ -193,7 +195,7 @@ function generatePasta() {
                             
                         </div>
                         <div><button
-                                class="btn color-bg-primary color-txt-white pe-4 ps-4">Add</button>
+                                class="btn color-bg-primary color-txt-white pe-4 ps-4" onclick="addItemToOrder('${pastaItem.code}')">Add</button>
                         </div>
                     </div>
                 </div>
@@ -221,7 +223,7 @@ function generateChicken() {
                             
                         </div>
                         <div><button
-                                class="btn color-bg-primary color-txt-white pe-4 ps-4">Add</button>
+                                class="btn color-bg-primary color-txt-white pe-4 ps-4" onclick="addItemToOrder('${chickenItem.code}')">Add</button>
                         </div>
                     </div>
                 </div>
@@ -250,7 +252,7 @@ function generateBeverages() {
                             ${isExpired ? "Expired" : ""}
                         </div>
                         <div><button
-                                class="btn ${isExpired ? "color-bg-danger" : "color-bg-primary"} color-txt-white pe-4 ps-4">Add</button>
+                                class="btn ${isExpired ? "color-bg-danger" : "color-bg-primary"} color-txt-white pe-4 ps-4" onclick="addItemToOrder('${beverage.code}')">Add</button>
                         </div>
                     </div>
                 </div>
