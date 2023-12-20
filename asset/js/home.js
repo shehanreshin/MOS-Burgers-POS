@@ -105,7 +105,7 @@ function updateSelectedItemsDisplay() {
                         <div>${selectedItem.name}</div>
                     </div>
                     <div class="d-flex align-items-center">
-                        <div class="fw-bold me-2">Rs. ${selectedItem.totalPrice.toFixed(2)}</div>
+                        <div class="fw-bold me-2" id="total-price-${collapseCounter}">Rs. ${selectedItem.totalPrice.toFixed(2)}</div>
                         <div class="cancel-selected-item"><img src="asset/img/home/cancel-b.png" alt="cancel"></div>
                     </div>
                 </div>
@@ -134,11 +134,14 @@ function updateSelectedItemsDisplay() {
     for (var i = 0; i < collapseCounter; i++) {
         var quantitySelector = document.getElementById(`txt-quantity-${i}`);
         var quantityHeaderSelector = document.getElementById(`quantity-header-${i}`);
+        var totalPriceSelector = document.getElementById(`total-price-${i}`);
         quantitySelector.addEventListener('input', event => {
             var newQuantity = parseInt(event.target.value, 10);
             selectedItem.qty = newQuantity;
             quantitySelector.value = selectedItem.qty;
             quantityHeaderSelector.innerHTML = selectedItem.qty;
+            selectedItem.totalPrice = selectedItem.unitPrice * selectedItem.qty;
+            totalPriceSelector.innerHTML = `Rs. ${selectedItem.totalPrice.toFixed(2)}`;
             updateBill();
         });
     }
