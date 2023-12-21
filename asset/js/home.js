@@ -16,10 +16,10 @@ const subtotalSelector = document.getElementById('subtotal'),
 let orders = [], selectedItems = [];
 
 function generateOrderId() {
-    if (currentOrders.length == 0) {
-        return (1).toFixed(9);
+    if (orders.length == 0) {
+        return (1).toString().padStart(9, '0');
     }
-    return (currentOrders[currentOrders.length - 1] + 1).toFixed(9);
+    return (Number(orders[orders.length - 1].orderId) + 1).toString().padStart(9, '0');
 }
 
 function updateBill() {
@@ -95,9 +95,6 @@ function updateSelectedItemsDisplay() {
         var placeHolder = selectedItem.maxDiscount != "" ? "placeholder = 'Max: " +
             selectedItem.maxDiscount + "%'" : "";
         var isExpired = selectedItem.expiry_date != undefined && new Date() >= new Date(selectedItem.expiry_date);
-        console.log(isExpired);
-        console.log(selectedItem.expiry_date);
-        console.log(new Date() >= new Date(selectedItem.expiry_date));
         var accordionColorBody = isExpired ? 'color-bg-danger' : 'color-bg-light';
         var accordionColorText = isExpired ? 'color-txt-white' : 'color-txt-dark';
         orderSection.innerHTML +=
@@ -395,10 +392,43 @@ document.getElementById('btn-logout').addEventListener('click', () => {
 });
 
 document.getElementById('btn-cancel').addEventListener('click', () => {
+    emptySelectedItems();
+});
+
+document.getElementById('btn-reset').addEventListener('click', () => {
+    emptySelectedItems();
+});
+
+document.getElementById('btn-add-existing-customer').addEventListener('click', () => {
+    console.log("clicked");
+});
+
+function emptySelectedItems() {
     selectedItems = [];
     updateSelectedItemsDisplay();
     updateBill();
+}
+
+document.getElementById('btn-proceed').addEventListener('click', () => {
+    var subtotal = 0, totalDiscount = 0;
+    selectedItems.forEach(selectedItem => {
+        subtotal += selectedItem.totalPrice;
+        totalDiscount = subtotal * (selectedItem.discount == "" ? 0 : selectedItem.discount / 100);
+    });
+    let order = {
+        orderId: generateOrderId(),
+        customerId: getCustomerId(),
+        date: new Date(),
+        itemsInOrder: selectedItems,
+        payableAmount: subtotal - totalDiscount
+    }
+    orders.push(order);
+    emptySelectedItems();
 });
+
+function getCustomerId() {
+    return document.getElementById('customer').innerText;
+}
 
 function attachCancelButtonListeners() {
     document.querySelectorAll('.cancel-selected-item').forEach((cancelButton) => {
@@ -412,3 +442,17 @@ function attachCancelButtonListeners() {
         });
     });
 }
+
+function submitCustomerNumber() {
+    var modalCustomer = new bootstrap.Modal(document.getElementById('mdl-customer'));
+    var customerNumber = document.getElementById('txt-existing-customer').value;
+    if (customerNumber !== '') {
+        document.getElementById('customer').innerText = customerNumber;
+        modalCustomer.hide();
+    }
+}
+
+document.getElementById('btn-add-existing-customer').addEventListener('click', () => {
+    var modalCustomer = new bootstrap.Modal(document.getElementById('mdl-customer'));
+    modalCustomer.show();
+});
