@@ -44,8 +44,8 @@ function generateBurgers() {
                     <div>
                         <h6 class="card-title mb-2">${burger.name}</h6>
                         <h6 class="fw-bolder">Rs. ${(burger.price).toFixed(2)}</h6>
+                        <p class="color-txt-primary">${burger.maxDiscount == "" ? "" : "Max discount: " + burger.maxDiscount + "%"}</p>
                     </div>
-
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="expiry-status color-text-danger">
 
@@ -174,6 +174,7 @@ function generateSubmarines() {
                     <div>
                         <h6 class="card-title mb-2">${submarine.name}</h6>
                         <h6 class="fw-bolder">Rs. ${(submarine.price).toFixed(2)}</h6>
+                        <p class="color-txt-primary">${submarine.maxDiscount == "" ? "" : "Max discount: " + submarine.maxDiscount + "%"}</p>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -202,6 +203,7 @@ function generateFries() {
                     <div>
                         <h6 class="card-title mb-2">${friedItem.name}</h6>
                         <h6 class="fw-bolder">Rs. ${(friedItem.price).toFixed(2)}</h6>
+                        <p class="color-txt-primary">${friedItem.maxDiscount == "" ? "" : "Max discount: " + friedItem.maxDiscount + "%"}</p>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -230,6 +232,7 @@ function generatePasta() {
                     <div>
                         <h6 class="card-title mb-2">${pastaItem.name}</h6>
                         <h6 class="fw-bolder">Rs. ${(pastaItem.price).toFixed(2)}</h6>
+                        <p class="color-txt-primary">${pastaItem.maxDiscount == "" ? "" : "Max discount: " + pastaItem.maxDiscount + "%"}</p>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -258,6 +261,7 @@ function generateChicken() {
                     <div>
                         <h6 class="card-title mb-2">${chickenItem.name}</h6>
                         <h6 class="fw-bolder">Rs. ${(chickenItem.price).toFixed(2)}</h6>
+                        <p class="color-txt-primary">${chickenItem.maxDiscount == "" ? "" : "Max discount: " + chickenItem.maxDiscount + "%"}</p>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -287,6 +291,7 @@ function generateBeverages() {
                     <div>
                         <h6 class="card-title mb-2">${beverage.name}</h6>
                         <h6 class="fw-bolder">Rs. ${(beverage.price).toFixed(2)}</h6>
+                        <p class="color-txt-primary">${beverage.maxDiscount == "" ? "" : "Max discount: " + beverage.maxDiscount + "%"}</p>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
