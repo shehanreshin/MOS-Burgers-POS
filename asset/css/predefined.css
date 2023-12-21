@@ -55,6 +55,10 @@ a {
     height: 60%;
 }
 
+.h-55 {
+    height: 55%;
+}
+
 .form-control:focus {
     background-color: #F4E9FD;
     border-color: rgba(146, 38, 237, 0.8);
