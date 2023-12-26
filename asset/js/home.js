@@ -13,7 +13,7 @@ const subtotalSelector = document.getElementById('subtotal'),
     totalDiscountSelector = document.getElementById('total-discount'),
     payableAmountSelector = document.getElementById('payable-amount');
 
-let orders = [], selectedItems = [];
+let orders = [], selectedItems = [], customers = [];
 
 function generateOrderId() {
     if (orders.length == 0) {
@@ -395,13 +395,6 @@ document.getElementById('btn-cancel').addEventListener('click', () => {
     emptySelectedItems();
 });
 
-document.getElementById('btn-reset').addEventListener('click', () => {
-    emptySelectedItems();
-});
-
-document.getElementById('btn-add-existing-customer').addEventListener('click', () => {
-    console.log("clicked");
-});
 
 function emptySelectedItems() {
     selectedItems = [];
@@ -452,7 +445,7 @@ function submitCustomerNumber() {
     }
 }
 
-document.getElementById('btn-add-existing-customer').addEventListener('click', () => {
+document.getElementById('btn-add-customer').addEventListener('click', () => {
     var modalCustomer = new bootstrap.Modal(document.getElementById('mdl-customer'));
     modalCustomer.show();
 });

@@ -63,6 +63,10 @@ main {
     cursor: pointer;
 }
 
+#customer {
+    border: 3px solid #0C1525;
+}
+
 @media (min-width:992px) and (max-width:1199px) {
     #item-types {
         font-size: 13px !important;
